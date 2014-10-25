@@ -6,7 +6,6 @@ import org.vosie.wikicards.Constants;
 import org.vosie.wikicards.utils.LanguageUtils;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.preference.ListPreference;
 import android.util.AttributeSet;
 
@@ -46,10 +45,6 @@ public class LangsPreference extends ListPreference {
       return;
     }
     this.setSummary(LanguageUtils.getLocalizedLanguageName(this.getValue()));
-    this.persistString(getValue());
-    SharedPreferences.Editor editor = this.getEditor();
-    editor.putString(getKey(), getValue());
-    editor.commit();
   }
 
   @Override
